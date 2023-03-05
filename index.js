@@ -148,6 +148,5 @@ app.all("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  const server = address().address;
-  console.log(`Example app listening at https://${server}:${port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });
