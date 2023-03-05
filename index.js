@@ -3,7 +3,7 @@ const sqlite3 = require("sqlite3").verbose();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const port = 80;
+const port = 443;
 
 require('dotenv').config()
 const myKey = process.env.ickapiskey;
