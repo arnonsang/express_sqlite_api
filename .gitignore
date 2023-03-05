@@ -1,5 +1,4 @@
 /node_modules
-/db
 schema.sql
 pnpm-lock.yaml
 pnpm-workspace.yaml
