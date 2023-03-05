@@ -5,6 +5,9 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
+require('dotenv').config()
+const myKey = process.env.ickapiskey;
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -43,7 +46,7 @@ const endpointList = [
         
 //api key in params
 const checkApiKeyParams = (req, res, next) => {
-  const apiKey = req.params.apikey;
+  const apiKey = myKey == undefined ? req.params.apikey : myKey;
   const db = new sqlite3.Database("./db/db.sqlite");
   //get the api key from the database
   db.all("SELECT * FROM apikeys WHERE key = ?", [apiKey], (err, rows) => {
