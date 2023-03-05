@@ -3,7 +3,7 @@ const sqlite3 = require("sqlite3").verbose();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const port = 3000;
+const port = 80;
 
 require('dotenv').config()
 const myKey = process.env.ickapiskey;
@@ -148,5 +148,6 @@ app.all("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App starting on ${port}`);
+  const server = address().address;
+  console.log(`Example app listening at https://${server}:${port}`);
 });
